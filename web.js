@@ -66,7 +66,7 @@ app.post('/', function(request, response){
         image : 'telegram.jpg'
     };
     
-    var updatedMessage = newCard.message.replace(/\./g,"-STOP-")
+    newCard.message = newCard.message.replace(/\./g,"-STOP-")
     
     // Put this newCard object into the cardArray
     cardArray.push(newCard);
