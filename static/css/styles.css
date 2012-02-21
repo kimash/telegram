@@ -1,0 +1,57 @@
+body { 
+    background: #DAA520;
+    color : #000;
+    font-family: 'Special Elite', cursive;
+}
+
+a { 
+    color: #fff;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 60px;
+    line-height:90px;
+    color: #696969;
+}
+
+h2 {
+    font-size: 60px;
+    line-height:60px;
+    color: #696969;
+}
+
+label {
+    font-family: 'Special Elite', cursive;
+    font-size:30px;
+    line-height:30px;
+    color: #696969;
+    
+}
+
+
+input,textarea {
+    font-family: 'Special Elite', cursive;
+    padding:8px;
+    font-size:30px;
+    height:52px;
+    
+}
+
+textarea#message {
+    width:610px;
+    height:200px;
+    line-height:32px;
+    font-family: 'Special Elite', cursive;
+}
+
+
+.container { 
+    background: #F0E68C;
+
+}
+
+.header {
+    padding:30px 0 30px 0;
+    text-align:center;
+}
