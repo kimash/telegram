@@ -23,6 +23,13 @@ h2 {
     color: #696969;
 }
 
+h3 {
+	font-size: 30px;
+	line-height: 30px;
+	color: #696969;
+}
+
+
 label {
     font-family: 'Special Elite', cursive;
     font-size:30px;
