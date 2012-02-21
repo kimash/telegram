@@ -1,7 +1,8 @@
 body { 
-    background: #DAA520;
+    background: #F0E68C;
     color : #000;
     font-family: 'Special Elite', cursive;
+    
 }
 
 a { 
@@ -10,7 +11,8 @@ a {
 }
 
 h1 {
-    font-size: 60px;
+	font-family: 'Diplomata SC', cursive;
+    font-size: 70px;
     line-height:90px;
     color: #696969;
 }
@@ -48,6 +50,8 @@ textarea#message {
 
 .container { 
     background: #F0E68C;
+    background-image: url('../img/telegram1.jpg');
+    background-repeat:no-repeat;
 
 }
 

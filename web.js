@@ -46,7 +46,8 @@ cardArray = []; // this array will hold card data from forms
 app.get('/', function(request, response) {
     var templateData = { 
         pageTitle : 'Compose a Telegram',
-        message: 'Hello Dynamic Web Class!'
+        message : 'Hello Dynamic Web Class!',
+        images : valentineImages
     };
     
     response.render("card_form.html",templateData);
@@ -61,8 +62,11 @@ app.post('/', function(request, response){
     newCard = {
         to : request.body.to,
         from : request.body.from,
-        message : request.body.message
+        message : request.body.message,
+        image : 'telegram.jpg'
     };
+    
+    document.write(newCard.message.replace(".", "-STOP-");
     
     // Put this newCard object into the cardArray
     cardArray.push(newCard);
