@@ -2,6 +2,16 @@ var express = require('express');
 var ejs = require('ejs');
 var app = express.createServer(express.logger());
 
+/************ DATABASE CONFIGURATION **********/
+app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+
+// Include models.js - this file includes the database schema and defines the models used
+require('./models').configureSchema(schema, mongoose);
+
+// Define your DB Model variables
+var newCard = mongoose.model('newCard');
+/************* END DATABASE CONFIGURATION *********/
+
 /*********** SERVER CONFIGURATION *****************/
 app.configure(function() {
     
@@ -66,6 +76,7 @@ app.post('/', function(request, response){
         image : 'telegram.jpg'
     };
     
+    //changes all "." to "-STOP" like in a real telegram
     newCard.message = newCard.message.replace(/\./g,"-STOP-")
     
     // Put this newCard object into the cardArray
