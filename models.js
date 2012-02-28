@@ -3,7 +3,7 @@ module.exports.configureSchema = function(Schema, mongoose) {
     
     
     //telegram schema 
-    var newCard = new Schema({
+    var Card = new Schema({
       to     : String, 
       from   : String,
       message   : String, 
@@ -11,6 +11,6 @@ module.exports.configureSchema = function(Schema, mongoose) {
     });
 
     // add schemas to Mongoose
-    mongoose.model('newCard', newCard);
+    mongoose.model('Card', Card);
 
 };

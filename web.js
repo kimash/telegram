@@ -12,7 +12,7 @@ app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs 
 require('./models').configureSchema(schema, mongoose);
 
 // Define your DB Model variables
-var newCard = mongoose.model('newCard');
+var Card = mongoose.model('Card');
 /************* END DATABASE CONFIGURATION *********/
 
 /*********** SERVER CONFIGURATION *****************/
@@ -54,7 +54,7 @@ app.configure(function() {
 
 valentineImages = ['telegram.jpg'];
 
-cardArray = []; // this array will hold card data from forms
+//cardArray = []; // this array will hold card data from forms
 
 app.get('/', function(request, response) {
     var templateData = { 
@@ -72,23 +72,32 @@ app.post('/', function(request, response){
     console.log(request.body);
     
     // Simple data object to hold the form data
-    newCard = {
+    newCard = new Card();
+    
+    /*{
         to : request.body.to,
         from : request.body.from,
         message : request.body.message,
         image : 'telegram.jpg'
-    };
+    };*/
+    
+    newCard.to = request.body.to;
+    newCard.from = request.body.from;
+    newCard.message = request.body.message;
+    newCard.image = 'telegram.jpg';
     
     //changes all "." to "-STOP" like in a real telegram
     newCard.message = newCard.message.replace(/\./g,"-STOP-")
     
+    newCard.save();
+    
     // Put this newCard object into the cardArray
-    cardArray.push(newCard);
+    //cardArray.push(newCard);
     
     // Get the position of the card in the cardArray
-    cardNumber = cardArray.length - 1;
+    //cardNumber = cardArray.length - 1;
     
-    response.redirect('/card/' + cardNumber);
+    //response.redirect('/card/' + cardNumber);
 });
 
 
