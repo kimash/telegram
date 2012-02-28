@@ -2,6 +2,9 @@ var express = require('express');
 var ejs = require('ejs');
 var app = express.createServer(express.logger());
 
+var mongoose = require('mongoose'); // include Mongoose MongoDB library
+var schema = mongoose.Schema; 
+
 /************ DATABASE CONFIGURATION **********/
 app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
